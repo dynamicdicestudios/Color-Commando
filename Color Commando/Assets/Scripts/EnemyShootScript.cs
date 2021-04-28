@@ -34,6 +34,6 @@ public class EnemyShootScript : MonoBehaviour
     void Update()
     {
         if (!shooted)
-			Shoot()
+			Shoot();
     }
 }

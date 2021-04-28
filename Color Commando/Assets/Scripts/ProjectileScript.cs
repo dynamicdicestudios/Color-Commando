@@ -15,14 +15,15 @@ public class ProjectileScript : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
-		finish = GameObject.FindWithTag("Finish").transform;
+		//finish = GameObject.FindWithTag("Finish").transform;
+		 rb.velocity= Camera.main.transform.forward * 40;
         Destroy(this.gameObject, timeTillDestroy);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float step =  speed * Time.deltaTime; // calculate distance to move
-		transform.position = Vector3.MoveTowards(transform.position, finish.position, step);
+        //float step =  speed * Time.deltaTime; // calculate distance to move
+		//transform.position = Vector3.MoveTowards(transform.position, finish.position, step);
     }
 }

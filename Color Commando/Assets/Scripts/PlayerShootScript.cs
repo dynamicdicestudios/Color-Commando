@@ -62,7 +62,7 @@ public class PlayerShootScript : MonoBehaviour
 				p.GetComponent<Rigidbody>().velocity = new Vector3(0, -speed, vz);
 			else
 				p.GetComponent<Rigidbody>().velocity = new Vector3(0, speed, vz);*/
-		}			
+		//}			
 		shooted = true;
 		Invoke("ResetShoot", 1);
 		

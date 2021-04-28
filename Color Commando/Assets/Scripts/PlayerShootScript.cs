@@ -46,8 +46,8 @@ public class PlayerShootScript : MonoBehaviour
 		negativeX = camera.rotation.x < 0 ? true : false;
 		
 		p.transform.position = projectileSpawnPos.transform.position;
-		if (Mathf.Abs(camera.rotation.y) <= 180) {
-			p.GetComponent<Rigidbody>().velocity = negativeY ? backward : forward;
+		/*if (Mathf.Abs(camera.rotation.y) <= 180) {
+			p.GetComponent<Rigidbody>().velocity = negativeY ? backward : forward;*/
 			/*float vz = p.GetComponent<Rigidbody>().velocity.z;
 			up = new Vector3(0, speed, vz);
 			down = new Vector3(0, -speed, vz);
@@ -55,8 +55,8 @@ public class PlayerShootScript : MonoBehaviour
 				p.GetComponent<Rigidbody>().velocity = negativeX ? down : up;
 			else if   
 				p.GetComponent<Rigidbody>().velocity = new Vector3(0, speed, vz);*/
-		} else {
-			p.GetComponent<Rigidbody>().velocity = negativeY ? forward : backward;
+		/*} else {
+			p.GetComponent<Rigidbody>().velocity = negativeY ? forward : backward;*/
 			/*float vz = p.GetComponent<Rigidbody>().velocity.z;
 			if (camera.rotation.x - (360*loopX) <= 180)
 				p.GetComponent<Rigidbody>().velocity = new Vector3(0, -speed, vz);

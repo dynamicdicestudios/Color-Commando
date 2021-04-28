@@ -10,6 +10,8 @@ public class EnemyShootScript : MonoBehaviour
 	public GameObject projectile;
     public Transform projectileSpawnPos;
 	
+	bool shooted;
+	
 	// Start is called before the first frame update
     void Start()
     {

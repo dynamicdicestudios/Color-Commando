@@ -10,11 +10,12 @@ public class ProjectileScript : MonoBehaviour
 	[SerializeField]
 	float speed = 10;
 	
-	public Transform target;
+	Transform finish;
 	
 	// Start is called before the first frame update
     void Start()
     {
+		finish = GameObject.FindWithTag("Finish").transform;
         Destroy(this.gameObject, timeTillDestroy);
     }
 
@@ -22,6 +23,6 @@ public class ProjectileScript : MonoBehaviour
     void Update()
     {
         float step =  speed * Time.deltaTime; // calculate distance to move
-		transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+		transform.position = Vector3.MoveTowards(transform.position, finish.position, step);
     }
 }

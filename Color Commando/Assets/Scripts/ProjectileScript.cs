@@ -10,13 +10,11 @@ public class ProjectileScript : MonoBehaviour
 	[SerializeField]
 	float speed = 10;
 	
-	Transform finish;
-	
 	// Start is called before the first frame update
     void Start()
     {
 		//finish = GameObject.FindWithTag("Finish").transform;
-		 rb.velocity= Camera.main.transform.forward * 40;
+		GetComponent<Rigidbody>().velocity= Camera.main.transform.forward * speed;
         Destroy(this.gameObject, timeTillDestroy);
     }
 

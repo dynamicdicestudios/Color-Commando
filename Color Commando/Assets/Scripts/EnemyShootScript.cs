@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyShootScript : MonoBehaviour
 {
     [SerializeField]
-	bool shootDelay = 3;
+	int shootDelay = 3;
 	
 	public GameObject projectile;
     public Transform projectileSpawnPos;

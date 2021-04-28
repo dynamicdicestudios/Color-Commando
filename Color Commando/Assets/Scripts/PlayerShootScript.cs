@@ -42,8 +42,8 @@ public class PlayerShootScript : MonoBehaviour
 	void Shoot() {
 		GameObject p = Instantiate(projectile);
 		
-		negativeY = camera.rotation.y < 0 ? true : false;
-		negativeX = camera.rotation.x < 0 ? true : false;
+		//negativeY = camera.rotation.y < 0 ? true : false;
+		//negativeX = camera.rotation.x < 0 ? true : false;
 		
 		p.transform.position = projectileSpawnPos.transform.position;
 		/*if (Mathf.Abs(camera.rotation.y) <= 180) {

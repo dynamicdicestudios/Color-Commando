@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerShootScript : MonoBehaviour
 {
@@ -40,29 +41,9 @@ public class PlayerShootScript : MonoBehaviour
 	}*/
 	
 	void Shoot() {
-		GameObject p = Instantiate(projectile);
-		
-		//negativeY = camera.rotation.y < 0 ? true : false;
-		//negativeX = camera.rotation.x < 0 ? true : false;
-		
+		GameObject p = Instantiate(projectile);		
 		p.transform.position = projectileSpawnPos.transform.position;
-		/*if (Mathf.Abs(camera.rotation.y) <= 180) {
-			p.GetComponent<Rigidbody>().velocity = negativeY ? backward : forward;*/
-			/*float vz = p.GetComponent<Rigidbody>().velocity.z;
-			up = new Vector3(0, speed, vz);
-			down = new Vector3(0, -speed, vz);
-			if (Math.Abs(camera.rotation.x) - (360*loopX) <= 180)
-				p.GetComponent<Rigidbody>().velocity = negativeX ? down : up;
-			else if   
-				p.GetComponent<Rigidbody>().velocity = new Vector3(0, speed, vz);*/
-		/*} else {
-			p.GetComponent<Rigidbody>().velocity = negativeY ? forward : backward;*/
-			/*float vz = p.GetComponent<Rigidbody>().velocity.z;
-			if (camera.rotation.x - (360*loopX) <= 180)
-				p.GetComponent<Rigidbody>().velocity = new Vector3(0, -speed, vz);
-			else
-				p.GetComponent<Rigidbody>().velocity = new Vector3(0, speed, vz);*/
-		//}			
+			
 		shooted = true;
 		Invoke("ResetShoot", 1);
 		
@@ -81,7 +62,7 @@ public class PlayerShootScript : MonoBehaviour
 				if (touch.position.x <= fracScreenWidth)
 					if (touch.phase == TouchPhase.Stationary)
 						Shoot();
-			} else if(Input.GetMouseButton(0)) {
+			} else if(Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject()) {
 				//Cache mouse position
 				Vector2 mouseCache = Input.mousePosition;
 				//If mouse x position is less than or equal to a fraction of the screen width

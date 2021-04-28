@@ -94,11 +94,10 @@ public class MarklessAR : MonoBehaviour
 			Debug.Log(joystick.Horizontal);
 			Debug.Log(joystick.Vertical);
 			
-			/*transform.RotateAround(transform.position, Vector3.up,
-				rotationSpeed * joystick.Horizontal * Time.deltaTime);*/
+			transform.RotateAround(transform.position, Vector3.up,
+				rotationSpeed * joystick.Horizontal * Time.deltaTime);
 			
-			Quaternion localRotation = Quaternion.Euler(-joystick.Vertical,
-											joystick.Horizontal, 0f);
+			Quaternion localRotation = Quaternion.Euler(-joystick.Vertical, 0f, 0f);
 			transform.rotation = transform.rotation * localRotation;
 				//transform.RotateAround(transform.position, Vector3.left,
 					//rotationSpeed * joystick.Vertical * Time.deltaTime);

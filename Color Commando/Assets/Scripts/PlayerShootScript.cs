@@ -8,9 +8,6 @@ public class PlayerShootScript : MonoBehaviour
 {
     public GameObject projectile;
     public Transform projectileSpawnPos;
-    public float speed;
-	
-	public Transform camera;
 	
 	private float fracScreenWidth;
     private float widthMinusFrac;
@@ -31,14 +28,7 @@ public class PlayerShootScript : MonoBehaviour
         screenWidth = Screen.width;
         fracScreenWidth = screenWidth / fracScreenWidth;
         widthMinusFrac = screenWidth - fracScreenWidth;
-		
-		forward = new Vector3(0, 0, speed);
-		backward = new Vector3(0, 0, -speed);
     }
-	
-	/*void OnMouseDown() {
-		Invoke("Shoot", 0);
-	}*/
 	
 	void Shoot() {
 		GameObject p = Instantiate(projectile,

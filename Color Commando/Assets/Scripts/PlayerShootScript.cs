@@ -41,8 +41,9 @@ public class PlayerShootScript : MonoBehaviour
 	}*/
 	
 	void Shoot() {
-		GameObject p = Instantiate(projectile);		
-		p.transform.position = projectileSpawnPos.transform.position;
+		GameObject p = Instantiate(projectile,
+								projectileSpawnPos.position,
+								projectileSpawnPos.rotation);		
 			
 		shooted = true;
 		Invoke("ResetShoot", 1);

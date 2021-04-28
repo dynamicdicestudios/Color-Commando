@@ -41,14 +41,12 @@ public class PlayerShootScript : MonoBehaviour
 	
 	void Shoot() {
 		GameObject p = Instantiate(projectile);
-		int loopY = (int)(camera.rotation.y / 360);
-		int loopX = (int)(camera.rotation.x / 360);
 		
-		negativeY = loopY < 0 ? true : false;
-		negativeX = loopX < 0 ? true : false;
+		negativeY = camera.rotation.y < 0 ? true : false;
+		negativeX = camera.rotation.x < 0 ? true : false;
 		
 		p.transform.position = projectileSpawnPos.transform.position;
-		if (Math.Abs(camera.rotation.y) - (360*loopY) <= 180) {
+		if (Mathf.Abs(camera.rotation.y) - (360*loopY) <= 180) {
 			p.GetComponent<Rigidbody>().velocity = negativeY ? backward : forward;
 			/*float vz = p.GetComponent<Rigidbody>().velocity.z;
 			up = new Vector3(0, speed, vz);

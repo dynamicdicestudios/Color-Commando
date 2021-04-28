@@ -33,6 +33,7 @@ public class MarklessAR : MonoBehaviour
     {
 		WebCamDevice[] devices = WebCamTexture.devices;
 		rigidBody = GetComponent<Rigidbody>();
+		rigidBody.constraints = RigidbodyConstraints.FreezeRotationZ;
 		
         //Check if we support both services
 		/*if (!SystemInfo.supportsGyroscope) {
@@ -90,25 +91,29 @@ public class MarklessAR : MonoBehaviour
 			int orient = -backCam.videoRotationAngle;
 			background.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
 			
-			/*transform.RotateAround(transform.position, Vector3.up,
+			Debug.Log(joystick.Horizontal);
+			Debug.Log(joystick.Vertical);
+			
+			transform.RotateAround(transform.position, Vector3.up,
 				rotationSpeed * joystick.Horizontal * Time.deltaTime);
-			if (Math.Abs(transform.rotation.x) < 45) 
-				transform.RotateAround(transform.position, Vector3.left,
-					rotationSpeed * joystick.Vertical * Time.deltaTime);
-					
-			*/
+			
+			Quaternion localRotation = Quaternion.Euler(joystick.Vertical, 0f, 0f);
+			transform.rotation = transform.rotation * localRotation;
+				//transform.RotateAround(transform.position, Vector3.left,
+					//rotationSpeed * joystick.Vertical * Time.deltaTime);
+			
 			//Update Gyroscope
 			//transform.localRotation = gyro.attitude * rot;
 			
 		}
 		
 		void FixedUpdate() {
-			eulerAngleVelocity = new Vector3(0,
+			/*eulerAngleVelocity = new Vector3(0,
 				joystick.Horizontal * rotationSpeed,
 				joystick.Vertical * rotationSpeed);
 				
 			Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.fixedDeltaTime);
-			rigidBody.MoveRotation(rigidBody.rotation * deltaRotation);
+			rigidBody.MoveRotation(rigidBody.rotation * deltaRotation);*/
 			
 		}
     }

@@ -11,10 +11,13 @@ public class EnemyProjectileScript : MonoBehaviour
 	float speed = 10;
 	
 	public bool isForward;
+	public Color colour;
 	
 	// Start is called before the first frame update
     void Start()
     {	
+		GetComponent<MeshRenderer>().material.color = colour;
+	
 		if (isForward)
 			GetComponent<Rigidbody>().velocity = new Vector3(0, 0, speed);
 		else

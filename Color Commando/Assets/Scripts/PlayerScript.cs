@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+	[SerializeField]
+    int health = 5;
+	
+	// Start is called before the first frame update
     void Start()
     {
         
@@ -17,8 +20,11 @@ public class PlayerScript : MonoBehaviour
     }
 	
 	private void OnTriggerEnter(Collider collision) {
-		if (collision.CompareTag("Enemy"))
-			Debug.Log("You lose");
+		if (collision.CompareTag("EnemyProjectile"))
+			health -= 1;
+		
+		if (health < 0)
+			Debug.Log("You Lose");
 		
 	}
 }

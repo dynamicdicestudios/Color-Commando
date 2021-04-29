@@ -157,8 +157,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootDelay: 3
-  projectile: {fileID: 0}
-  projectileSpawnPos: {fileID: 0}
+  projectile: {fileID: 2200216214426613504, guid: de6611d7f3c44334999bf9d94d139f82, type: 3}
+  projectileSpawnPosF: {fileID: 1505670928932305515}
+  projectileSpawnPosB: {fileID: 4584683691244864274}
 --- !u!1 &5071717687933202884
 GameObject:
   m_ObjectHideFlags: 0

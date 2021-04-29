@@ -20,8 +20,10 @@ public class PlayerScript : MonoBehaviour
     }
 	
 	private void OnTriggerEnter(Collider collision) {
-		if (collision.CompareTag("EnemyProjectile"))
+		if (collision.CompareTag("EnemyProjectile")) {
 			health -= 1;
+			Destroy(collision.gameObject);
+		}
 		
 		if (health < 0)
 			Debug.Log("You Lose");

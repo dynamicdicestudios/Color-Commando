@@ -8,11 +8,12 @@ public class EnemyShootScript : MonoBehaviour
 	int shootDelay = 3;
 	
 	public GameObject projectile;
-    public Transform projectileSpawnPosF;
-    public Transform projectileSpawnPosB;
+    public Transform[] spawnPos;
 	
 	GameObject player;
 	bool shooted;
+	int index;
+	float dist = 0;
 	
 	// Start is called before the first frame update
     void Start()
@@ -21,19 +22,18 @@ public class EnemyShootScript : MonoBehaviour
     }
 	
 	void Shoot() {								
-		var heading = player.transform.position - transform.position;
-		float dot = Vector3.Dot(heading, transform.forward);
 		
-		GameObject p = Instantiate(projectile);
-		if (dot >= 0) {
-			p.transform.position = projectileSpawnPosF.position;
-			p.transform.rotation = projectileSpawnPosF.rotation;
-			p.GetComponent<EnemyProjectileScript>().isForward = true;
-		} else {
-			p.transform.position = projectileSpawnPosB.position;
-			p.transform.rotation = projectileSpawnPosB.rotation;
-			p.GetComponent<EnemyProjectileScript>().isForward = false;
+		float temp = 0;
+		for (int i = 0; i < spawnPos.Count; i++) {
+			temp = Vector3.Distance(player.transform.position,
+									spawnPos[i].position)
+			if (temp >= dist)
+				index = i;
 		}
+		GameObject p = Instantiate(projectile,	
+									spawnPos[index].position,
+									spawnPos[index].rotation);
+		p.GetComponent<EnemyProjectileScript>().face = index;
 		p.GetComponent<EnemyProjectileScript>().colour = GetComponent<MeshRenderer>().material.color;
 		
 		shooted = true;

@@ -26,7 +26,7 @@ public class EnemyShootScript : MonoBehaviour
 		float temp = 0;
 		for (int i = 0; i < spawnPos.Count; i++) {
 			temp = Vector3.Distance(player.transform.position,
-									spawnPos[i].position)
+									spawnPos[i].position);
 			if (temp >= dist)
 				index = i;
 		}

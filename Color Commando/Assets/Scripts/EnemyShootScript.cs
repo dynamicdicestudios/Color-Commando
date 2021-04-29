@@ -24,18 +24,18 @@ public class EnemyShootScript : MonoBehaviour
 		var heading = player.transform.position - transform.position;
 		float dot = Vector3.Dot(heading, transform.forward);
 		
+		GameObject p = Instantiate(projectile);
 		if (dot >= 0) {
-			GameObject p = Instantiate(projectile,
-								projectileSpawnPosF.position,
-								projectileSpawnPosF.rotation);
+			p.transform.position = projectileSpawnPosF.position;
+			p.transform.rotation = projectileSpawnPosF.rotation;
 			p.GetComponent<EnemyProjectileScript>().isForward = true;
 		} else {
-			GameObject p = Instantiate(projectile,
-								projectileSpawnPosB.position,
-								projectileSpawnPosB.rotation);
-			p.GetComponent<EnemyProjectileScript>().isForward = true;
+			p.transform.position = projectileSpawnPosB.position;
+			p.transform.rotation = projectileSpawnPosB.rotation;
+			p.GetComponent<EnemyProjectileScript>().isForward = false;
 		}
-			
+		p.GetComponent<EnemyProjectileScript>().colour = GetComponent<MeshRenderer>().material.color;
+		
 		shooted = true;
 		Invoke("ResetShoot", shootDelay);
 		

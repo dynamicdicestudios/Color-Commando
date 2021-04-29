@@ -10,7 +10,7 @@ public class EnemyProjectileScript : MonoBehaviour
 	[SerializeField]
 	float speed = 10;
 	
-	public bool isForward;
+	public int face;
 	public Color colour;
 	
 	// Start is called before the first frame update
@@ -18,11 +18,21 @@ public class EnemyProjectileScript : MonoBehaviour
     {	
 		GetComponent<MeshRenderer>().material.color = colour;
 	
-		if (isForward)
+		if (face == 1)
 			GetComponent<Rigidbody>().velocity = new Vector3(0, 0, speed);
-		else
+		else if (face == 2)
+			GetComponent<Rigidbody>().velocity = new Vector3(speed, 0, 0);
+		else if (face == 3)
 			GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -speed);
-        Destroy(this.gameObject, timeTillDestroy);
+        else if (face == 4)
+			GetComponent<Rigidbody>().velocity = new Vector3(-speed, 0, 0);
+		else if (face == 5)
+			GetComponent<Rigidbody>().velocity = new Vector3(0, speed, 0);
+		else if (face == 6)
+			GetComponent<Rigidbody>().velocity = new Vector3(0, -speed, 0);
+		
+		
+		Destroy(this.gameObject, timeTillDestroy);
     }
 
     // Update is called once per frame

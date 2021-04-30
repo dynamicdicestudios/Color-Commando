@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {		
 		if (!hasSpawned) {
+			hasSpawned = true;
 			if (isArcade)
 				ArcadeSpawnEnemy();
 			else

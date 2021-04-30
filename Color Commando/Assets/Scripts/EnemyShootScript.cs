@@ -13,7 +13,6 @@ public class EnemyShootScript : MonoBehaviour
 	GameObject player;
 	bool shooted;
 	int index;
-	float dist = 0;
 	
 	// Start is called before the first frame update
     void Start()
@@ -24,11 +23,14 @@ public class EnemyShootScript : MonoBehaviour
 	void Shoot() {								
 		
 		float temp = 0;
+		float dist = 0;
 		for (int i = 0; i < spawnPos.Length; i++) {
 			temp = Vector3.Distance(player.transform.position,
 									spawnPos[i].position);
-			if (temp >= dist)
-				index = i;
+			if (temp >= dist) {
+				dist = temp;
+				index = i + 1;
+			}
 		}
 		GameObject p = Instantiate(projectile,	
 									spawnPos[index].position,

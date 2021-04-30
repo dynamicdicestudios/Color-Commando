@@ -11,7 +11,7 @@ public class EnemyProjectileScript : MonoBehaviour
 	float speed = 10;
 	
 	public Color colour;
-	Transform target;
+	public Transform target;
 	
 	// Start is called before the first frame update
     void Start()

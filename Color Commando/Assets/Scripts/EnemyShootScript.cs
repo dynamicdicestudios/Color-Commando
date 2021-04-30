@@ -23,6 +23,7 @@ public class EnemyShootScript : MonoBehaviour
 									transform.position,
 									transform.rotation);
 		p.GetComponent<EnemyProjectileScript>().colour = GetComponent<MeshRenderer>().material.color;
+		p.GetComponent<EnemyProjectileScript>().target = GetComponent<EnemyMovementScript>().target;
 		
 		shooted = true;
 		Invoke("ResetShoot", shootDelay);

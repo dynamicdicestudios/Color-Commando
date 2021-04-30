@@ -11,13 +11,16 @@ public class GameManager : MonoBehaviour
 	[SerializeField]
 	float spawnDist;
 	
+	[SerializeField]
+	float spawnDelay = 2;
+	
 	public bool isArcade;
 	
 	private WebCamTexture backCam;	 
 	System.Random rnd = new System.Random();
 	
 	float zCoor;
-	
+	bool hasSpawned;	
 	int height, width;
 	
 	// Start is called before the first frame update
@@ -33,16 +36,19 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-		GameObject foe = GameObject.FindWithTag("Enemy");
-		
-		if (foe == null) {
+    {		
+		if (!hasSpawned) {
 			if (isArcade)
 				ArcadeSpawnEnemy();
 			else
 				StartCoroutine(ClassicSpawnEnemy());
 		}
 	}
+	
+	void ResetSpawn() {
+		hasSpawned = false;
+	}
+	
 	
 	void ArcadeSpawnEnemy() {
 		float x = UnityEngine.Random.value;
@@ -58,6 +64,8 @@ public class GameManager : MonoBehaviour
 		GameObject foe = Instantiate(enemy, spawnPos, transform.rotation);
 		foe.GetComponent<EnemyMovementScript>().target = player.transform;
 		foe.GetComponent<MeshRenderer>().material.color = colour;
+		
+		Invoke("ResetSpawn", spawnDelay);
 		
 	}
 	
@@ -84,6 +92,8 @@ public class GameManager : MonoBehaviour
 		GameObject foe = Instantiate(enemy, spawnPos, transform.rotation);
 		foe.GetComponent<EnemyMovementScript>().target = player.transform;
 		foe.GetComponent<MeshRenderer>().material.color = colour;
+	
+		Invoke("ResetSpawn", spawnDelay);
 	}
 	
 }

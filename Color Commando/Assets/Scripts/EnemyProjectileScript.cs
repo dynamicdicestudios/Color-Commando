@@ -16,9 +16,9 @@ public class EnemyProjectileScript : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {	
-		GetComponent<MeshRenderer>().material.color = colour;		
-		Destroy(this.gameObject, timeTillDestroy);
+		GetComponent<MeshRenderer>().material.color = colour;
 		target = GetComponent<EnemyMovementScript>().target;
+		Destroy(this.gameObject, timeTillDestroy);
     }
 
     // Update is called once per frame

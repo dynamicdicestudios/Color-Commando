@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour
 {
     public GameObject enemy;
 	public MarklessAR markless;
-	
 	[SerializeField]
 	float spawnDist;
+	
+	[SerializeField]
+	float spawnDelay = 2;
 	
 	public bool isArcade;
 	
@@ -19,7 +21,7 @@ public class GameManager : MonoBehaviour
 	
 	float zCoor;
 	bool hasSpawned;	
-	int height, width, spawnDelay;
+	int height, width;
 	
 	// Start is called before the first frame update
     void Start()
@@ -37,8 +39,6 @@ public class GameManager : MonoBehaviour
     {		
 		if (!hasSpawned) {
 			hasSpawned = true;
-			spawnDelay = rnd.Next(1, 5);
-			
 			if (isArcade)
 				ArcadeSpawnEnemy();
 			else

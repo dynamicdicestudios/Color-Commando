@@ -9,10 +9,6 @@ public class EnemyMovementScript : MonoBehaviour
 	
 	[SerializeField]
 	float speed = 5;
-	
-	//[SerializeField]
-	//float haltDist = 200;
-	
 	//int direction;
 	
 	System.Random rnd = new System.Random();
@@ -30,13 +26,9 @@ public class EnemyMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		/*if (Vector3.Distance(transform.position, target.position) < haltDist)
-			GetComponent<Translate>().enabled = true;
-		else {*/
 		// Move our position a step closer to the target.
 		float step =  speed * Time.deltaTime; // calculate distance to move
 		transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-		//}
 		
 	}
 }

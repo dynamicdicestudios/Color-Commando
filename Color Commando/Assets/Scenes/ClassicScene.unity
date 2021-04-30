@@ -1770,7 +1770,7 @@ MonoBehaviour:
   enemy: {fileID: 5071717687860353186, guid: 363bf9f06151ec248bef4ad88b3fb846, type: 3}
   markless: {fileID: 519420030}
   spawnDist: 500
-  spawnDelay: 5
+  spawnDelay: 7.5
   isArcade: 0
 --- !u!4 &2075447314
 Transform:

@@ -10,6 +10,9 @@ public class EnemyProjectileScript : MonoBehaviour
 	[SerializeField]
 	float speed = 10;
 	
+	[SerializeField]
+	int health = 0;
+	
 	public Color colour;
 	public Transform target;
 	
@@ -27,4 +30,13 @@ public class EnemyProjectileScript : MonoBehaviour
 		float step =  speed * Time.deltaTime; // calculate distance to move
 		transform.position = Vector3.MoveTowards(transform.position, target.position, step);
     }
+	
+	private void OnTriggerEnter(Collider collision) {
+		if (collision.CompareTag("Regular"))
+			health -= 1;
+		
+		if (health < 0)
+			Destroy(this.gameObject);
+		
+	}
 }

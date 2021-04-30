@@ -17,7 +17,6 @@ public class EnemyProjectileScript : MonoBehaviour
     void Start()
     {	
 		GetComponent<MeshRenderer>().material.color = colour;
-		target = GetComponent<EnemyMovementScript>().target;
 		Destroy(this.gameObject, timeTillDestroy);
     }
 

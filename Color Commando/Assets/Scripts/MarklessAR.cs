@@ -91,9 +91,6 @@ public class MarklessAR : MonoBehaviour
 			int orient = -backCam.videoRotationAngle;
 			background.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
 			
-			Debug.Log(joystick.Horizontal);
-			Debug.Log(joystick.Vertical);
-			
 			transform.RotateAround(transform.position, Vector3.up,
 				rotationSpeed * joystick.Horizontal * Time.deltaTime);
 			
@@ -106,15 +103,6 @@ public class MarklessAR : MonoBehaviour
 			//transform.localRotation = gyro.attitude * rot;
 			
 		}
-		
-		void FixedUpdate() {
-			/*eulerAngleVelocity = new Vector3(0,
-				joystick.Horizontal * rotationSpeed,
-				joystick.Vertical * rotationSpeed);
-				
-			Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.fixedDeltaTime);
-			rigidBody.MoveRotation(rigidBody.rotation * deltaRotation);*/
-			
-		}
+	
     }
 }

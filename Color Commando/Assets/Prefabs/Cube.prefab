@@ -280,15 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694b3989390e34d44a0f6a14a7df1336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelay: 3
+  shootDelay: 5
   projectile: {fileID: 2200216214426613504, guid: de6611d7f3c44334999bf9d94d139f82, type: 3}
-  spawnPos:
-  - {fileID: 1505670928932305515}
-  - {fileID: 4584683691244864274}
-  - {fileID: 1902674154693784880}
-  - {fileID: 6486766690210707100}
-  - {fileID: 4480737301908254235}
-  - {fileID: 2467249146830342315}
 --- !u!1 &5071717687933202884
 GameObject:
   m_ObjectHideFlags: 0

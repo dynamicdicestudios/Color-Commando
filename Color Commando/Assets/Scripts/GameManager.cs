@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 	float spawnDelay = 2;
 	
 	public bool isArcade;
+	public ColorClassifier cc;
 	
 	private WebCamTexture backCam;	 
 	System.Random rnd = new System.Random();
@@ -59,7 +60,9 @@ public class GameManager : MonoBehaviour
 		Vector3 spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(x, y, spawnDist));
 		
 		Color colour = backCam.GetPixel((int)(spawnPos.x), (int)(spawnPos.y));
-		Debug.Log(colour); 
+		string name = cc.rgbToString(colour.r, colour.g, colour.b);
+		Debug.Log(name); 
+		
 		
 		GameObject player = GameObject.FindWithTag("Player");
 		GameObject foe = Instantiate(enemy, spawnPos, transform.rotation);
@@ -87,7 +90,8 @@ public class GameManager : MonoBehaviour
 		Vector3 spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(x, y, spawnDist));
 		
 		Color colour = tex.GetPixel((int)(spawnPos.x), (int)(spawnPos.y));
-		Debug.Log(colour); 
+		string name = cc.rgbToString(colour.r, colour.g, colour.b);
+		Debug.Log(name);
 		
 		GameObject player = GameObject.FindWithTag("Player");
 		GameObject foe = Instantiate(enemy, spawnPos, transform.rotation);

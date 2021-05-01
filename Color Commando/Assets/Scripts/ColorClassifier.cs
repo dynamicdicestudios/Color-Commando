@@ -19,8 +19,11 @@ public class ColorClassifier : MonoBehaviour
 		else if (r > g && b > g && b > r)
 			return "indigo";
 		else if (r > g && b > g && r > b)
-			return "indigo";
-		
+			return "violet";
+		else if ((r+g+b) < 128*3)
+			return "black";
+		else if ((r+g+b) < 128*3)
+			return "white";
 		
 	}
 		

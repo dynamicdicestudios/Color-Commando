@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ColorClassifier : MonoBehaviour
 {
-    string rgbToString(float r, float g, float b) {
+    public string rgbToString(float r, float g, float b) {
 		if (r > 1.5f * g && r > 1.5f * b)
 			return "red";
 		else if (r + g > 2.5f * b && r > b && r > g + 10)

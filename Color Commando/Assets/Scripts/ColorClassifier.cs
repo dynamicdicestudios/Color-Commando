@@ -1,18 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ColorClassifier : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    string rgbToString(float r, float g, float b) {
+		if (r > 1.5f * g && r > 1.5f * b)
+			return "red";
+		else if (r + g > 2.5f * b && r > b && r > g + 10)
+			return "orange";
+		else if (r + g > 2.5f * b && r > b)
+			return "yellow";
+		else if (g > r && g > b)
+			return "green";
+		else if (b > r && b > g && g > r && Mathf.Abs(b-g) <= 10)
+			return "blue";
+		else if (r > g && b > g && b > r)
+			return "indigo";
+		else if (r > g && b > g && r > b)
+			return "indigo";
+		
+		
+	}
+		
 }

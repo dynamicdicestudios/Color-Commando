@@ -25,8 +25,8 @@ public class PlayerScript : MonoBehaviour
 			Destroy(collision.gameObject);
 		}
 		
-		if (health < 0)
-			Debug.Log("You Lose");
+		/*if (health < 0)
+			Debug.Log("You Lose");*/
 		
 	}
 }

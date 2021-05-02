@@ -18,7 +18,7 @@ public class ColorClassifier : MonoBehaviour
 			return "blue";
 		else if (r > g && b > g && b > r)
 			return "indigo";
-		else if (r > g && b > g && r > b)
+		else if (r > g && b > g && r >= b)
 			return "violet";
 		else if ((r+g+b) < 85*3)
 			return "black";

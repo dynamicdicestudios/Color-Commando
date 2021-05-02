@@ -20,12 +20,12 @@ public class ColorClassifier : MonoBehaviour
 			return "indigo";
 		else if (r > g && b > g && r > b)
 			return "violet";
-		else if ((r+g+b) < 128*3)
+		else if ((r+g+b) < 85*3)
 			return "black";
-		else
+		else if ((r+g+b) >= 85*3)
 			return "white";
-		/*else if ((r+g+b) >= 128*3)
-			return "white";*/
+		else
+			return "black";
 		
 	}
 		

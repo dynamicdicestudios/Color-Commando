@@ -90,8 +90,12 @@ public class GameManager : MonoBehaviour
 		Vector3 spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(x, y, spawnDist));
 		
 		Color colour = tex.GetPixel((int)(spawnPos.x), (int)(spawnPos.y));
-		string name = cc.rgbToString(colour.r, colour.g, colour.b);
+		string name = cc.rgbToString(Mathf.round(colour.r*255),
+									Mathf.round(colour.g*255),
+									Mathf.round(colour.b*255));
 		Debug.Log(name);
+		if (name == "black")
+			Debug.Log(colour.r);
 		
 		GameObject player = GameObject.FindWithTag("Player");
 		GameObject foe = Instantiate(enemy, spawnPos, transform.rotation);

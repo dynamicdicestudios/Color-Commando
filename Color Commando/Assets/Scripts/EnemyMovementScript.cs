@@ -7,8 +7,7 @@ public class EnemyMovementScript : MonoBehaviour
 {
     public Transform target;
 	
-	[SerializeField]
-	float speed = 5;
+	public float speed = 5;
 	//int direction;
 	
 	System.Random rnd = new System.Random();

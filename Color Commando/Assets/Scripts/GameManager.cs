@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
 			foe = Instantiate(enemies[3], spawnPos, transform.rotation);
 		else
 			foe = Instantiate(enemies[0], spawnPos, transform.rotation);
+		foe.GetComponent<EnemyScript>().type = name;
 		foe.GetComponent<EnemyMovementScript>().target = player.transform;
 		foe.GetComponent<MeshRenderer>().material.color = colour;
 	

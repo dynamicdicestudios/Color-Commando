@@ -8,6 +8,7 @@ public class EnemyShootScript : MonoBehaviour
 	int shootDelay = 3;
 	
 	public GameObject projectile;
+	public bool isYellow;
 	
 	GameObject player;
 	bool shooted;
@@ -24,6 +25,8 @@ public class EnemyShootScript : MonoBehaviour
 									transform.rotation);
 		p.GetComponent<EnemyProjectileScript>().colour = GetComponent<MeshRenderer>().material.color;
 		p.GetComponent<EnemyProjectileScript>().target = GetComponent<EnemyMovementScript>().target;
+		if (isYellow)
+			p.GetComponent<EnemyProjectileScript>().speed = 250;
 		
 		shooted = true;
 		Invoke("ResetShoot", shootDelay);

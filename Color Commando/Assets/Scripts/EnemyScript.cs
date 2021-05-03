@@ -13,6 +13,7 @@ public class EnemyScript : MonoBehaviour
 		"blue", "black", "white"};
 	
 	bool isBlue;
+	bool isRed;
 	//public float timeToDestroy
     // Start is called before the first frame update
     void Start()
@@ -54,13 +55,14 @@ public class EnemyScript : MonoBehaviour
 				
 				c1.GetComponent<MeshRenderer>().material.color = GetComponent<MeshRenderer>().material.color;
 				c2.GetComponent<MeshRenderer>().material.color = GetComponent<MeshRenderer>().material.color;
-			}
+			} else if (isRed)
+				Explode();
 			Destroy(this.gameObject);  
 		}
     }
 	
 	void Red() {
-		
+		isRed = true;
 	}
 	
 	void Yellow() {
@@ -85,6 +87,11 @@ public class EnemyScript : MonoBehaviour
 	void White() {
 		GetComponent<Translate>().enabled = true;
 		GetComponent<Translate>().movesHorizontally = true;
+	}
+	
+	void Explode() {
+		
+		
 	}
 	
 	private void OnTriggerEnter(Collider collision) {

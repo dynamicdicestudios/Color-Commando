@@ -12,7 +12,7 @@ public class ColorClassifier : MonoBehaviour
 			return "orange";
 		else if (r + g > 2.5f * b && r > b)
 			return "yellow";
-		else if ((g > r || r - g < 10) && g > b)
+		else if ((g > r || r - g <= 10) && g > b)
 			return "green";
 		else if (b > r && b > g && g > r && Mathf.Abs(b-g) <= 10)
 			return "blue";

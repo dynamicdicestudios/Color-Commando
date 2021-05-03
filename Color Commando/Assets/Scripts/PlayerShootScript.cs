@@ -14,12 +14,7 @@ public class PlayerShootScript : MonoBehaviour
 	private int screenHeight;
     private int screenWidth;
 	
-	bool shooted;
-	bool negativeX;
-	bool negativeY;
-	
-	Vector3 forward, backward, up, down;
-	
+	bool shooted;	
 	
 	// Start is called before the first frame update
     void Start()
@@ -36,7 +31,7 @@ public class PlayerShootScript : MonoBehaviour
 								projectileSpawnPos.rotation);		
 			
 		shooted = true;
-		Invoke("ResetShoot", 1);
+		Invoke("ResetShoot", 0.5f);
 		
 	}
 	

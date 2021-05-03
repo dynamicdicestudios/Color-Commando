@@ -24,6 +24,10 @@ public class EnemyScript : MonoBehaviour
 			Orange();
 		else if (type == types[2])
 			Yellow();
+		else if (type == types[2])
+			Green();
+		else if (type == types[2])
+			Blue();
 		
     }
 
@@ -69,7 +73,7 @@ public class EnemyScript : MonoBehaviour
 	}
 	
 	void Green() {
-		
+		GetComponent<EnemyShootScript>().isGreen = true;
 	}
 	
 	void Blue() {

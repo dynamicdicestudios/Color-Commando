@@ -14,11 +14,16 @@ public class EnemyProjectileScript : MonoBehaviour
 	
 	public Color colour;
 	public Transform target;
+	public bool isClone;
+	
+	GameObject clone;
 	
 	// Start is called before the first frame update
     void Start()
     {	
-		GetComponent<MeshRenderer>().material.color = colour;
+		clone = this.gameObject;
+		if (!isClone)
+			GetComponent<MeshRenderer>().material.color = colour;
 		Destroy(this.gameObject, timeTillDestroy);
     }
 
@@ -34,8 +39,27 @@ public class EnemyProjectileScript : MonoBehaviour
 		if (collision.CompareTag("Regular"))
 			health -= 1;
 		
-		if (health < 0)
+		if (health < 0) {
+			if (isGreen && !isClone) {
+				GameObject c1 = Instantiate(clone,
+					new Vector3(gameObject.transform.position.x + 10,
+						gameObject.transform.position.y, 
+						gameObject.transform.position.z),
+					this.gameObject.transform.rotation);
+				GameObject c2 = Instantiate(clone,
+					new Vector3(gameObject.transform.position.x - 10,
+						gameObject.transform.position.y, 
+						gameObject.transform.position.z),
+					this.gameObject.transform.rotation);
+				
+				c1.GetComponent<EnemyProjectileScript>().isClone = true;
+				c2.GetComponent<EnemyProjectileScript>().isClone = true;
+				
+				c1.GetComponent<MeshRenderer>().material.color = GetComponent<MeshRenderer>().material.color;
+				c2.GetComponent<MeshRenderer>().material.color = GetComponent<MeshRenderer>().material.color;
+			}
 			Destroy(this.gameObject);
+		}
 		
 	}
 }

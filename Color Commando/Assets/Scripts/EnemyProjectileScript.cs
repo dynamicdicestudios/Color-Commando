@@ -15,6 +15,7 @@ public class EnemyProjectileScript : MonoBehaviour
 	public Color colour;
 	public Transform target;
 	public bool isClone;
+	public bool isGreen;
 	
 	GameObject clone;
 	

@@ -76,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 5425933866724571781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 151.48438, y: 0.55903614, z: 14.415294}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 5425933866697790432}
   m_Father: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   health: 3
   type: 
   isClone: 0
-  clone: {fileID: 0}
+  clone: {fileID: 5425933866724571781}
 --- !u!114 &4155040485587163940
 MonoBehaviour:
   m_ObjectHideFlags: 0

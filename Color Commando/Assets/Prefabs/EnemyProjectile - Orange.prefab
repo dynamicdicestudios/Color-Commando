@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeTillDestroy: 10
-  speed: 175
+  speed: 150
   health: 0
   colour: {r: 0.5921569, g: 0.6, b: 0.6117647, a: 1}
   target: {fileID: 0}

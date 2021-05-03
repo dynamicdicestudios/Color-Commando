@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b885379c42e7a5d41b349efc5846ceb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 5
   type: 
   isClone: 0
   clone: {fileID: 5425933866724571781, guid: ee4cdd71ffbe4c34c833bccce93fde0a, type: 3}
@@ -204,3 +204,4 @@ MonoBehaviour:
   shootDelay: 3
   projectile: {fileID: 2200216214426613504, guid: de6611d7f3c44334999bf9d94d139f82, type: 3}
   isYellow: 0
+  isGreen: 0

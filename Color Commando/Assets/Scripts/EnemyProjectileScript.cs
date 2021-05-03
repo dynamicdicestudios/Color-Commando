@@ -7,8 +7,7 @@ public class EnemyProjectileScript : MonoBehaviour
     [SerializeField]
 	float timeTillDestroy = 10;
 	
-	[SerializeField]
-	float speed = 10;
+	public float speed = 10;
 	
 	[SerializeField]
 	int health = 0;

@@ -9,8 +9,8 @@ public class EnemyScript : MonoBehaviour
 	public bool isClone;
 	public GameObject clone;
 	
-	string[] types = {"red", "orange", "yellow", "green",
-		"blue", "indigo", "violet", "black", "white"};
+	string[] types = {"red", "yellow", "green", 
+		"blue", "black", "white"};
 	
 	bool isBlue;
 	//public float timeToDestroy
@@ -21,13 +21,15 @@ public class EnemyScript : MonoBehaviour
 		if (type == types[0])
 			Red();
 		else if (type == types[1])
-			Orange();
-		else if (type == types[2])
 			Yellow();
 		else if (type == types[2])
 			Green();
-		else if (type == types[2])
+		else if (type == types[3])
 			Blue();
+		else if (type == types[4])
+			Black();
+		else if (type == types[5])
+			White();
 		
     }
 
@@ -61,11 +63,6 @@ public class EnemyScript : MonoBehaviour
 		
 	}
 	
-	void Orange() {
-		GetComponent<Translate>().enabled = true;
-		GetComponent<Translate>().movesHorizontally = true;
-	}
-	
 	void Yellow() {
 		GetComponent<EnemyMovementScript>().speed = 75;
 		GetComponent<EnemyShootScript>().isYellow = true;
@@ -80,8 +77,14 @@ public class EnemyScript : MonoBehaviour
 		isBlue = true;
 	}
 	
-	void Indigo() {
-		
+	void Black() {
+		GetComponent<Translate>().enabled = true;
+		GetComponent<Translate>().movesHorizontally = false;
+	}
+	
+	void White() {
+		GetComponent<Translate>().enabled = true;
+		GetComponent<Translate>().movesHorizontally = true;
 	}
 	
 	private void OnTriggerEnter(Collider collision) {

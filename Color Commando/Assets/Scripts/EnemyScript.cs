@@ -9,7 +9,7 @@ public class EnemyScript : MonoBehaviour
 	public bool isClone;
 	public GameObject clone;
 	
-	string[] types = {"red", "yellow", "green", 
+	string[] types = {"red", "orange", "yellow", "green", 
 		"blue", "black", "white"};
 	
 	bool isBlue;
@@ -22,14 +22,16 @@ public class EnemyScript : MonoBehaviour
 		if (type == types[0])
 			Red();
 		else if (type == types[1])
-			Yellow();
+			Orange();
 		else if (type == types[2])
-			Green();
+			Yellow();
 		else if (type == types[3])
-			Blue();
+			Green();
 		else if (type == types[4])
-			Black();
+			Blue();
 		else if (type == types[5])
+			Black();
+		else if (type == types[6])
 			White();
 		
     }
@@ -63,6 +65,10 @@ public class EnemyScript : MonoBehaviour
 	
 	void Red() {
 		isRed = true;
+	}
+	
+	void Orange() {
+		GetComponent<Light>().color = GetComponent<MeshRenderer>().material.color;
 	}
 	
 	void Yellow() {

@@ -99,10 +99,9 @@ public class GameManager : MonoBehaviour
 		
 		GameObject player = GameObject.FindWithTag("Player");
 		
-		if (name == "orange") {
+		if (name == "orange")
 			foe = Instantiate(enemies[1], spawnPos, transform.rotation);
-			foe.GetComponent<Light>().color = colour;
-		} else if (name == "indigo")
+		else if (name == "indigo")
 			foe = Instantiate(enemies[2], spawnPos, transform.rotation);
 		else if (name == "violet")
 			foe = Instantiate(enemies[3], spawnPos, transform.rotation);

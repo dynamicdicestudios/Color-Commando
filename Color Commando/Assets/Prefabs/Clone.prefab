@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee2569115c1d6341945acd638eb71e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  push: 7
-  maxDist: 50
+  push: 5
+  maxDist: 100
   movesHorizontally: 0
 --- !u!114 &4471737706307731422
 MonoBehaviour:
@@ -204,3 +204,4 @@ MonoBehaviour:
   shootDelay: 3
   projectile: {fileID: 2200216214426613504, guid: de6611d7f3c44334999bf9d94d139f82, type: 3}
   isYellow: 0
+  isGreen: 0

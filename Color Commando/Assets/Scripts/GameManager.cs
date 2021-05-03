@@ -99,10 +99,13 @@ public class GameManager : MonoBehaviour
 		
 		GameObject player = GameObject.FindWithTag("Player");
 		
-		if (name == "indigo")
+		if (name == "orange") {
 			foe = Instantiate(enemies[1], spawnPos, transform.rotation);
-		else if (name == "violet")
+			
+		} else if (name == "indigo")
 			foe = Instantiate(enemies[2], spawnPos, transform.rotation);
+		else if (name == "violet")
+			foe = Instantiate(enemies[3], spawnPos, transform.rotation);
 		else
 			foe = Instantiate(enemies[0], spawnPos, transform.rotation);
 		foe.GetComponent<EnemyMovementScript>().target = player.transform;

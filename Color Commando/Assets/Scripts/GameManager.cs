@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject[] enemies;
 	public MarklessAR markless;
 	[SerializeField]
 	float spawnDist;
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 		
 		
 		GameObject player = GameObject.FindWithTag("Player");
-		GameObject foe = Instantiate(enemy, spawnPos, transform.rotation);
+		GameObject foe = Instantiate(enemies[0], spawnPos, transform.rotation);
 		foe.GetComponent<EnemyMovementScript>().target = player.transform;
 		foe.GetComponent<MeshRenderer>().material.color = colour;
 		
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
 			Debug.Log(colour.r);
 		
 		GameObject player = GameObject.FindWithTag("Player");
-		GameObject foe = Instantiate(enemy, spawnPos, transform.rotation);
+		GameObject foe = Instantiate(enemies[0], spawnPos, transform.rotation);
 		foe.GetComponent<EnemyMovementScript>().target = player.transform;
 		foe.GetComponent<MeshRenderer>().material.color = colour;
 	

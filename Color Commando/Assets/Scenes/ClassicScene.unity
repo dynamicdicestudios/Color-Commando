@@ -1770,6 +1770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 5071717687860353186, guid: 363bf9f06151ec248bef4ad88b3fb846, type: 3}
+  - {fileID: 4167720601666524143, guid: bf429f3c11d35344eb311be598226f90, type: 3}
   - {fileID: 1517046433877290330, guid: d125841900fc90b45b1609920857a892, type: 3}
   - {fileID: 7147007951158529624, guid: ce995c5a53e9370448bc7f5a95218e1f, type: 3}
   markless: {fileID: 519420030}

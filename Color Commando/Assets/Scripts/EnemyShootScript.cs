@@ -28,6 +28,8 @@ public class EnemyShootScript : MonoBehaviour
 		p.GetComponent<EnemyProjectileScript>().target = GetComponent<EnemyMovementScript>().target;
 		if (isYellow)
 			p.GetComponent<EnemyProjectileScript>().speed = 250;
+		else if (isGreen)
+			p.GetComponent<EnemyProjectileScript>().isGreen = true;
 		
 		shooted = true;
 		Invoke("ResetShoot", shootDelay);

@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootDelay: 3
-  projectile: {fileID: 2200216214426613504, guid: de6611d7f3c44334999bf9d94d139f82, type: 3}
+  projectile: {fileID: 204847289524114803, guid: 5d9544fdef577ff4fa4265a6aebfc592, type: 3}
   isYellow: 0
   isGreen: 0
 --- !u!108 &9202238959253605199

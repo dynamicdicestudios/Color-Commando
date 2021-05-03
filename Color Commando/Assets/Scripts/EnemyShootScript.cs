@@ -9,6 +9,7 @@ public class EnemyShootScript : MonoBehaviour
 	
 	public GameObject projectile;
 	public bool isYellow;
+	public bool isGreen;
 	
 	GameObject player;
 	bool shooted;

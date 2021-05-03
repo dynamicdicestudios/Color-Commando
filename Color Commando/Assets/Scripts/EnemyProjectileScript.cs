@@ -56,6 +56,9 @@ public class EnemyProjectileScript : MonoBehaviour
 				c1.GetComponent<EnemyProjectileScript>().isClone = true;
 				c2.GetComponent<EnemyProjectileScript>().isClone = true;
 				
+				c1.GetComponent<EnemyProjectileScript>().target = target;
+				c2.GetComponent<EnemyProjectileScript>().target = target;
+				
 				c1.GetComponent<MeshRenderer>().material.color = GetComponent<MeshRenderer>().material.color;
 				c2.GetComponent<MeshRenderer>().material.color = GetComponent<MeshRenderer>().material.color;
 			}

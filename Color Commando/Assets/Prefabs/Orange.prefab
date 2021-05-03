@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 5418910735570973262}
   - component: {fileID: 5518229046413563572}
   - component: {fileID: 9202238959253605199}
-  - component: {fileID: 650999834186648287}
   m_Layer: 0
   m_Name: Orange
   m_TagString: Untagged
@@ -224,19 +223,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &650999834186648287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167720601666524143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 069c1a4c78c01eb4486cf7a55bfcce3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  intensityMax: 8
 --- !u!1 &4167720601756154505
 GameObject:
   m_ObjectHideFlags: 0

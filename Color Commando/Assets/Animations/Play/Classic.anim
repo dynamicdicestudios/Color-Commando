@@ -617,7 +617,7 @@ AnimationClip:
     messageOptions: 0
   - time: 1.75
     functionName: changeScene
-    data: CSelectionScene
+    data: StageSelectionScene
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
